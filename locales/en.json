@@ -1,0 +1,97 @@
+{
+  "navbar": {
+    "currencies": "Currencies",
+    "banks": "Banks",
+    "exchangeOffices": "Exchange Offices",
+    "login": "Login",
+    "signup": "Sign Up"
+  },
+  "home": {
+    "title": "Morocco Exchange Rates",
+    "subtitle": "Track real-time currency exchange rates from the Moroccan Central Bank, commercial banks, and exchange offices across Morocco.",
+    "currencyRates": {
+      "title": "Currency Rates",
+      "description": "Official rates from Bank Al-Maghrib",
+      "content": "View the latest official exchange rates published by the Moroccan Central Bank with historical charts and trends.",
+      "button": "View Currencies"
+    },
+    "bankRates": {
+      "title": "Bank Rates",
+      "description": "Compare rates across Moroccan banks",
+      "content": "Compare exchange rates offered by different commercial banks in Morocco to find the best rates for your transactions.",
+      "button": "View Banks"
+    },
+    "exchangeOffices": {
+      "title": "Exchange Offices",
+      "description": "Find the best rates near you",
+      "content": "Discover exchange offices across Morocco and compare their rates to get the most value for your money.",
+      "button": "View Exchange Offices"
+    },
+    "registerSection": {
+      "title": "Are you an exchange office?",
+      "content": "Register to list your exchange office and update your rates in real-time to attract more customers.",
+      "login": "Login",
+      "signup": "Sign Up"
+    }
+  },
+  "currencies": {
+    "title": "Currency Exchange Rates",
+    "subtitle": "Official exchange rates from Bank Al-Maghrib (Moroccan Central Bank). Updated daily at 12:00 PM Moroccan time.",
+    "aboutRates": {
+      "title": "About These Rates",
+      "paragraph1": "The exchange rates displayed on this page are the official rates published by Bank Al-Maghrib (BAM), the central bank of Morocco. These rates are used as a reference for financial institutions and commercial transactions.",
+      "paragraph2": "Please note that commercial banks and exchange offices may offer different rates for their services. The actual rate you receive may vary depending on the institution, transaction amount, and other factors.",
+      "clickInfo": "Click on any currency card to view its historical chart."
+    },
+    "historicalChart": "Historical Chart",
+    "lastSixMonths": "Last 6 months"
+  },
+  "banks": {
+    "title": "Moroccan Banks",
+    "subtitle": "Compare exchange rates offered by different commercial banks in Morocco. Click on a bank to view their current rates.",
+    "searchPlaceholder": "Search banks...",
+    "viewRates": "View exchange rates"
+  },
+  "exchangeOfficesPage": {
+    "title": "Exchange Offices",
+    "subtitle": "Find the best exchange rates from offices across Morocco",
+    "registerButton": "Register Your Exchange Office",
+    "searchPlaceholder": "Search by name or location..."
+  },
+  "login": {
+    "title": "Login",
+    "subtitle": "Enter your credentials to access your account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "signupLink": "Sign up"
+  },
+  "signup": {
+    "title": "Create an account",
+    "subtitle": "Register your exchange office to display your rates",
+    "officeName": "Exchange Office Name",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "city": "City",
+    "selectCity": "Select city",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "terms": "I agree to the",
+    "termsLink": "terms of service",
+    "and": "and",
+    "privacyLink": "privacy policy",
+    "createButton": "Create account",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Login"
+  },
+  "common": {
+    "loading": "Loading...",
+    "viewMore": "View More",
+    "back": "Back"
+  },
+  "direction": "ltr"
+}

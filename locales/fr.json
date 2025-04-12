@@ -1,0 +1,97 @@
+{
+  "navbar": {
+    "currencies": "Devises",
+    "banks": "Banques",
+    "exchangeOffices": "Bureaux de Change",
+    "login": "Connexion",
+    "signup": "Inscription"
+  },
+  "home": {
+    "title": "Taux de Change au Maroc",
+    "subtitle": "Suivez les taux de change en temps réel de la Banque Centrale du Maroc, des banques commerciales et des bureaux de change à travers le Maroc.",
+    "currencyRates": {
+      "title": "Taux de Devises",
+      "description": "Taux officiels de Bank Al-Maghrib",
+      "content": "Consultez les derniers taux de change officiels publiés par la Banque Centrale du Maroc avec des graphiques et des tendances historiques.",
+      "button": "Voir les Devises"
+    },
+    "bankRates": {
+      "title": "Taux Bancaires",
+      "description": "Comparez les taux des banques marocaines",
+      "content": "Comparez les taux de change proposés par différentes banques commerciales au Maroc pour trouver les meilleurs taux pour vos transactions.",
+      "button": "Voir les Banques"
+    },
+    "exchangeOffices": {
+      "title": "Bureaux de Change",
+      "description": "Trouvez les meilleurs taux près de chez vous",
+      "content": "Découvrez les bureaux de change à travers le Maroc et comparez leurs taux pour obtenir le meilleur rapport qualité-prix.",
+      "button": "Voir les Bureaux de Change"
+    },
+    "registerSection": {
+      "title": "Êtes-vous un bureau de change ?",
+      "content": "Inscrivez-vous pour répertorier votre bureau de change et mettre à jour vos taux en temps réel pour attirer plus de clients.",
+      "login": "Connexion",
+      "signup": "Inscription"
+    }
+  },
+  "currencies": {
+    "title": "Taux de Change des Devises",
+    "subtitle": "Taux de change officiels de Bank Al-Maghrib (Banque Centrale du Maroc). Mis à jour quotidiennement à 12h00, heure marocaine.",
+    "aboutRates": {
+      "title": "À propos de ces Taux",
+      "paragraph1": "Les taux de change affichés sur cette page sont les taux officiels publiés par Bank Al-Maghrib (BAM), la banque centrale du Maroc. Ces taux sont utilisés comme référence pour les institutions financières et les transactions commerciales.",
+      "paragraph2": "Veuillez noter que les banques commerciales et les bureaux de change peuvent proposer des taux différents pour leurs services. Le taux réel que vous recevez peut varier en fonction de l'institution, du montant de la transaction et d'autres facteurs.",
+      "clickInfo": "Cliquez sur n'importe quelle carte de devise pour voir son graphique historique."
+    },
+    "historicalChart": "Graphique Historique",
+    "lastSixMonths": "6 derniers mois"
+  },
+  "banks": {
+    "title": "Banques Marocaines",
+    "subtitle": "Comparez les taux de change proposés par différentes banques commerciales au Maroc. Cliquez sur une banque pour voir ses taux actuels.",
+    "searchPlaceholder": "Rechercher des banques...",
+    "viewRates": "Voir les taux de change"
+  },
+  "exchangeOfficesPage": {
+    "title": "Bureaux de Change",
+    "subtitle": "Trouvez les meilleurs taux de change des bureaux au Maroc",
+    "registerButton": "Enregistrer Votre Bureau de Change",
+    "searchPlaceholder": "Rechercher par nom ou emplacement..."
+  },
+  "login": {
+    "title": "Connexion",
+    "subtitle": "Entrez vos identifiants pour accéder à votre compte",
+    "email": "Email",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "loginButton": "Se connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signupLink": "S'inscrire"
+  },
+  "signup": {
+    "title": "Créer un compte",
+    "subtitle": "Enregistrez votre bureau de change pour afficher vos taux",
+    "officeName": "Nom du Bureau de Change",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "phone": "Numéro de Téléphone",
+    "city": "Ville",
+    "selectCity": "Sélectionner une ville",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le Mot de passe",
+    "terms": "J'accepte les",
+    "termsLink": "conditions d'utilisation",
+    "and": "et",
+    "privacyLink": "politique de confidentialité",
+    "createButton": "Créer un compte",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "loginLink": "Se connecter"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "viewMore": "Voir Plus",
+    "back": "Retour"
+  },
+  "direction": "ltr"
+}
