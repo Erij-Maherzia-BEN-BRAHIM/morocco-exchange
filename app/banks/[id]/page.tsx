@@ -1,9 +1,22 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { ArrowDown, ArrowUp, ChevronLeft } from "lucide-react"
-import Link from "next/link"
-import CurrencyFlag from "@/components/currency-flag"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { ArrowDown, ArrowUp, ChevronLeft } from "lucide-react";
+import Link from "next/link";
+import CurrencyFlag from "@/components/currency-flag";
 
 export default function BankPage({ params }: { params: { id: string } }) {
   // In a real app, this data would be fetched from an API based on the bank ID
@@ -11,16 +24,46 @@ export default function BankPage({ params }: { params: { id: string } }) {
     id: params.id,
     name: getBankName(params.id),
     logo: "/placeholder.svg?height=80&width=80",
-    lastUpdated: "Today at 12:00 PM",
+    lastUpdated: "Today at 08:30 AM",
     rates: [
-      { currency: "US Dollar", code: "USD", buy: 9.95, sell: 10.15, change: 0.02 },
+      {
+        currency: "US Dollar",
+        code: "USD",
+        buy: 9.95,
+        sell: 10.15,
+        change: 0.02,
+      },
       { currency: "Euro", code: "EUR", buy: 11.05, sell: 11.25, change: -0.03 },
-      { currency: "British Pound", code: "GBP", buy: 12.75, sell: 12.95, change: 0.05 },
-      { currency: "Swiss Franc", code: "CHF", buy: 11.15, sell: 11.35, change: 0.04 },
-      { currency: "Canadian Dollar", code: "CAD", buy: 7.35, sell: 7.55, change: 0.01 },
-      { currency: "Japanese Yen", code: "JPY", buy: 0.065, sell: 0.071, change: -0.001 },
+      {
+        currency: "British Pound",
+        code: "GBP",
+        buy: 12.75,
+        sell: 12.95,
+        change: 0.05,
+      },
+      {
+        currency: "Swiss Franc",
+        code: "CHF",
+        buy: 11.15,
+        sell: 11.35,
+        change: 0.04,
+      },
+      {
+        currency: "Canadian Dollar",
+        code: "CAD",
+        buy: 7.35,
+        sell: 7.55,
+        change: 0.01,
+      },
+      {
+        currency: "Japanese Yen",
+        code: "JPY",
+        buy: 0.065,
+        sell: 0.071,
+        change: -0.001,
+      },
     ],
-  }
+  };
 
   function getBankName(id: string): string {
     const banks: Record<string, string> = {
@@ -33,8 +76,8 @@ export default function BankPage({ params }: { params: { id: string } }) {
       cdm: "Crédit du Maroc",
       bmci: "BMCI",
       cfg: "CFG Bank",
-    }
-    return banks[id] || "Unknown Bank"
+    };
+    return banks[id] || "Unknown Bank";
   }
 
   return (
@@ -54,14 +97,18 @@ export default function BankPage({ params }: { params: { id: string } }) {
         />
         <div>
           <h1 className="text-3xl font-bold">{bankData.name}</h1>
-          <p className="text-muted-foreground">Exchange rates last updated: {bankData.lastUpdated}</p>
+          <p className="text-muted-foreground">
+            Exchange rates last updated: {bankData.lastUpdated}
+          </p>
         </div>
       </div>
 
       <Card>
         <CardHeader>
           <CardTitle>Current Exchange Rates</CardTitle>
-          <CardDescription>Buy and sell rates for foreign currencies</CardDescription>
+          <CardDescription>
+            Buy and sell rates for foreign currencies
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Table>
@@ -85,8 +132,16 @@ export default function BankPage({ params }: { params: { id: string } }) {
                   <TableCell>{rate.buy.toFixed(2)}</TableCell>
                   <TableCell>{rate.sell.toFixed(2)}</TableCell>
                   <TableCell>
-                    <span className={`inline-flex items-center ${rate.change > 0 ? "text-green-500" : "text-red-500"}`}>
-                      {rate.change > 0 ? <ArrowUp className="h-3 w-3 mr-1" /> : <ArrowDown className="h-3 w-3 mr-1" />}
+                    <span
+                      className={`inline-flex items-center ${
+                        rate.change > 0 ? "text-green-500" : "text-red-500"
+                      }`}
+                    >
+                      {rate.change > 0 ? (
+                        <ArrowUp className="h-3 w-3 mr-1" />
+                      ) : (
+                        <ArrowDown className="h-3 w-3 mr-1" />
+                      )}
                       {Math.abs(rate.change).toFixed(3)}
                     </span>
                   </TableCell>
@@ -104,16 +159,19 @@ export default function BankPage({ params }: { params: { id: string } }) {
           </CardHeader>
           <CardContent>
             <p className="mb-4">
-              The exchange rates displayed on this page are provided by {bankData.name}. These rates may differ from the
-              official rates published by Bank Al-Maghrib and from rates offered by other financial institutions.
+              The exchange rates displayed on this page are provided by{" "}
+              {bankData.name}. These rates may differ from the official rates
+              published by Bank Al-Maghrib and from rates offered by other
+              financial institutions.
             </p>
             <p>
-              Please note that the actual rate you receive may vary depending on the transaction amount, customer
-              relationship, and other factors. For the most accurate rates, please contact the bank directly.
+              Please note that the actual rate you receive may vary depending on
+              the transaction amount, customer relationship, and other factors.
+              For the most accurate rates, please contact the bank directly.
             </p>
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }

@@ -36,7 +36,7 @@
   },
   "currencies": {
     "title": "Currency Exchange Rates",
-    "subtitle": "Official exchange rates from Bank Al-Maghrib (Moroccan Central Bank). Updated daily at 12:00 PM Moroccan time.",
+    "subtitle": "Official exchange rates from Bank Al-Maghrib (Moroccan Central Bank). Updated daily at 08:30 AM Moroccan time.",
     "aboutRates": {
       "title": "About These Rates",
       "paragraph1": "The exchange rates displayed on this page are the official rates published by Bank Al-Maghrib (BAM), the central bank of Morocco. These rates are used as a reference for financial institutions and commercial transactions.",
