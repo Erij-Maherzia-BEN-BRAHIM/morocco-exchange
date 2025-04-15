@@ -15,6 +15,7 @@ import CurrencyFlag from "@/components/currency-flag";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/components/language-provider";
 import { useExchangeRates } from "@/hooks/use-exchange-rates";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function CurrenciesPage() {
   const [selectedCurrency, setSelectedCurrency] = useState<string | null>(null);
@@ -36,38 +37,46 @@ export default function CurrenciesPage() {
       <p className="text-muted-foreground mb-8">{t("currencies.subtitle")}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        {currencies.map((currency) => (
-          <Card
-            key={currency.code}
-            className={`cursor-pointer transition-all hover:shadow-md ${
-              selectedCurrency === currency.code ? "ring-2 ring-primary" : ""
-            }`}
-            onClick={() => handleCurrencyClick(currency.code)}
-          >
-            <CardHeader className="pb-2">
-              <CardTitle className="flex justify-between items-center">
-                <div className="flex items-center gap-2">
-                  <CurrencyFlag code={currency.code} />
-                  <span>{currency.code}</span>
+        {currencies.length > 0
+          ? currencies.map((currency) => (
+              <Card
+                key={currency.code}
+                className={`cursor-pointer transition-all hover:shadow-md ${
+                  selectedCurrency === currency.code
+                    ? "ring-2 ring-primary"
+                    : ""
+                }`}
+                onClick={() => handleCurrencyClick(currency.code)}
+              >
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex justify-between items-center">
+                    <div className="flex items-center gap-2">
+                      <CurrencyFlag code={currency.code} />
+                      <span>{currency.code}</span>
+                    </div>
+                    <span
+                      className={
+                        currency.change > 0 ? "text-green-500" : "text-red-500"
+                      }
+                    >
+                      {currency.change > 0 ? "+" : ""}
+                      {currency.change.toFixed(3)}
+                    </span>
+                  </CardTitle>
+                  <CardDescription>{currency.name}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-2xl font-bold">{currency.rate} MAD</div>
+                </CardContent>
+              </Card>
+            ))
+          : Array(13)
+              .fill(0)
+              .map((_, index) => (
+                <div key={index}>
+                  <Skeleton />
                 </div>
-                <span
-                  className={
-                    currency.change > 0 ? "text-green-500" : "text-red-500"
-                  }
-                >
-                  {currency.change > 0 ? "+" : ""}
-                  {currency.change.toFixed(3)}
-                </span>
-              </CardTitle>
-              <CardDescription>{currency.name}</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">
-                {currency.rate.toFixed(2)} MAD
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+              ))}
       </div>
 
       {selectedCurrency && (
