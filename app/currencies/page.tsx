@@ -1,35 +1,34 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { X } from "lucide-react"
-import CurrencyChart from "@/components/currency-chart"
-import CurrencyFlag from "@/components/currency-flag"
-import { useTranslation } from "react-i18next"
-import { useLanguage } from "@/components/language-provider"
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
+import CurrencyChart from "@/components/currency-chart";
+import CurrencyFlag from "@/components/currency-flag";
+import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/components/language-provider";
+import { useExchangeRates } from "@/hooks/use-exchange-rates";
 
 export default function CurrenciesPage() {
-  const [selectedCurrency, setSelectedCurrency] = useState<string | null>(null)
-  const { t } = useTranslation()
-  const { language } = useLanguage()
-
-  // In a real app, this data would be fetched from an API
-  const currencies = [
-    { code: "USD", name: "US Dollar", rate: 10.05, change: 0.02 },
-    { code: "EUR", name: "Euro", rate: 11.15, change: -0.03 },
-    { code: "GBP", name: "British Pound", rate: 12.85, change: 0.05 },
-    { code: "JPY", name: "Japanese Yen", rate: 0.068, change: -0.001 },
-    { code: "CAD", name: "Canadian Dollar", rate: 7.45, change: 0.01 },
-    { code: "CHF", name: "Swiss Franc", rate: 11.25, change: 0.04 },
-    { code: "AUD", name: "Australian Dollar", rate: 6.75, change: -0.02 },
-  ]
+  const [selectedCurrency, setSelectedCurrency] = useState<string | null>(null);
+  const { t } = useTranslation();
+  const { language } = useLanguage();
+  const { rates: currencies } = useExchangeRates();
 
   const handleCurrencyClick = (code: string) => {
-    setSelectedCurrency(code === selectedCurrency ? null : code)
-  }
+    setSelectedCurrency(code === selectedCurrency ? null : code);
+  };
 
-  const selectedCurrencyData = currencies.find((c) => c.code === selectedCurrency)
+  const selectedCurrencyData = currencies.find(
+    (c) => c.code === selectedCurrency
+  );
 
   return (
     <div className="container py-8" dir={language === "ar" ? "rtl" : "ltr"}>
@@ -51,7 +50,11 @@ export default function CurrenciesPage() {
                   <CurrencyFlag code={currency.code} />
                   <span>{currency.code}</span>
                 </div>
-                <span className={currency.change > 0 ? "text-green-500" : "text-red-500"}>
+                <span
+                  className={
+                    currency.change > 0 ? "text-green-500" : "text-red-500"
+                  }
+                >
                   {currency.change > 0 ? "+" : ""}
                   {currency.change.toFixed(3)}
                 </span>
@@ -59,7 +62,9 @@ export default function CurrenciesPage() {
               <CardDescription>{currency.name}</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">{currency.rate.toFixed(2)} MAD</div>
+              <div className="text-2xl font-bold">
+                {currency.rate.toFixed(2)} MAD
+              </div>
             </CardContent>
           </Card>
         ))}
@@ -82,7 +87,8 @@ export default function CurrenciesPage() {
               {selectedCurrency} / MAD - {t("currencies.historicalChart")}
             </CardTitle>
             <CardDescription>
-              {selectedCurrencyData?.name} to Moroccan Dirham - {t("currencies.lastSixMonths")}
+              {selectedCurrencyData?.name} to Moroccan Dirham -{" "}
+              {t("currencies.lastSixMonths")}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -98,9 +104,11 @@ export default function CurrenciesPage() {
         <CardContent>
           <p className="mb-4">{t("currencies.aboutRates.paragraph1")}</p>
           <p>{t("currencies.aboutRates.paragraph2")}</p>
-          <p className="mt-4 text-sm text-muted-foreground">{t("currencies.aboutRates.clickInfo")}</p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            {t("currencies.aboutRates.clickInfo")}
+          </p>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
