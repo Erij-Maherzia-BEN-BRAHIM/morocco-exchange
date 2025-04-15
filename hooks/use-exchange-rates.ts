@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export type Rate = {
   code: string;
+  name: string;
   rate: number;
   change: number;
 };

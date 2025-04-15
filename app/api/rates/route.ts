@@ -24,6 +24,23 @@ function getPreviousDate(dateStr: string): string {
   return formatDate(d);
 }
 
+const currencyNames: Record<string, string> = {
+  AED: "UAE Dirham",
+  AUD: "Australian Dollar",
+  CAD: "Canadian Dollar",
+  CHF: "Swiss Franc",
+  EUR: "Euro",
+  GBP: "British Pound",
+  JPY: "Japanese Yen",
+  SAR: "Saudi Riyal",
+  USD: "US Dollar",
+  KWD: "Kuwaiti Dinar",
+  BHD: "Bahraini Dinar",
+  OMR: "Omani Rial",
+  QAR: "Qatari Riyal",
+  GIP: "Gibraltar Pound",
+};
+
 export async function GET(req: NextRequest) {
   let currentDate = new Date();
   let todayStr = formatDate(currentDate);
@@ -48,6 +65,7 @@ export async function GET(req: NextRequest) {
 
     return {
       code: rateToday.libDevise,
+      name: currencyNames[rateToday.libDevise] || rateToday.libDevise, // fallback to code if name not found
       rate: todayVal,
       change: parseFloat((todayVal - prevVal).toFixed(4)),
     };
