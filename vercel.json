@@ -1,0 +1,9 @@
+{
+  "cron": [
+    {
+      "path": "/api/exchange/save",
+      "schedule": "0 1 * * *",
+      "method": "POST"
+    }
+  ]
+}
