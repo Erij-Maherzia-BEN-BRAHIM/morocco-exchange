@@ -36,7 +36,7 @@
   },
   "currencies": {
     "title": "Taux de Change des Devises",
-    "subtitle": "Taux de change officiels de Bank Al-Maghrib (Banque Centrale du Maroc). Mis à jour quotidiennement à 12h00, heure marocaine.",
+    "subtitle": "Taux de change officiels de Bank Al-Maghrib (Banque Centrale du Maroc). Mis à jour quotidiennement à 08h30, heure marocaine.",
     "aboutRates": {
       "title": "À propos de ces Taux",
       "paragraph1": "Les taux de change affichés sur cette page sont les taux officiels publiés par Bank Al-Maghrib (BAM), la banque centrale du Maroc. Ces taux sont utilisés comme référence pour les institutions financières et les transactions commerciales.",
