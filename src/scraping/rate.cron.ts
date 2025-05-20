@@ -1,8 +1,7 @@
 
 import cron from 'node-cron';
-import { scrapeAttijari } from '../scraping/attijariwafa.scraper';
-//import { scrapeBMCE } from '../scraping/bmce/scraper';         // Exemple si tu ajoutes d'autres
-import { scrapeBankAlMaghrib } from '../scraping/bankAlmaghrib.scapper'; // Exemple
+import { updateAttijariRates } from '../scraping/attijariwafa.scraper';
+
 
 export const startRateUpdateJob = () => {
   cron.schedule('*/30 * * * *', async () => {
@@ -10,13 +9,13 @@ export const startRateUpdateJob = () => {
 
     try {
       await Promise.all([
-        scrapeAttijari(),
-        // scrapeBMCE(),
-         scrapeBankAlMaghrib(),
+      updateAttijariRates(),
+      // scrapeBMCE(),
+      //  scrapeBankAlMaghrib(),
       ]);
       console.log('✅ Tous les scrapers ont terminé');
     } catch (error) {
       console.error('❌ Une erreur est survenue pendant le scraping :', error);
     }
-  });
+    });
 };

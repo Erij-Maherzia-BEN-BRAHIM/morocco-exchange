@@ -1,0 +1,159 @@
+{
+  "info": {
+    "name": "Exchange Maroc API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0",
+    "description": "Postman collection for Exchange Maroc backend"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:7000/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7000",
+          "path": ["api", "auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:7000/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7000",
+          "path": ["api", "auth", "login"]
+        }
+      }
+    },
+    {
+      "name": "Get All Rates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7000/api/rates",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7000",
+          "path": ["api", "rates"]
+        }
+      }
+    },
+    {
+      "name": "Get Best Buy Rates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7000/api/rates/best-buy",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7000",
+          "path": ["api", "rates", "best-buy"]
+        }
+      }
+    },
+    {
+      "name": "Get Best Sell Rates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:7000/api/rates/best-sell",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7000",
+          "path": ["api", "rates", "best-sell"]
+        }
+      }
+    },
+    {
+      "name": "Add or Update Bureau Rate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currency\": \"USD\",\n  \"buyRate\": 10.5,\n  \"sellRate\": 10.8,\n  \"unit\": \"1\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:7000/api/rates/bureau/add",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7000",
+          "path": ["api", "rates", "bureau", "add"]
+        }
+      }
+    },
+    {
+      "name": "Add or Update Bank Rate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currency\": \"USD\",\n  \"buyRate\": 10.5,\n  \"sellRate\": 10.8,\n  \"unit\": \"1\",\n  \"bank\": \"BMCE\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:7000/api/rates/bank/add",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "7000",
+          "path": ["api", "rates", "bank", "add"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
